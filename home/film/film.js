@@ -105,7 +105,7 @@ async function loadSources() {
 async function fetchMovies(page, forceRefresh = false) {
   showLoading();
   try {
-    const url = `http://movieapi.sendpo.cn/movieapi/${currentSource}.php?ac=detail&pg=${page}`;
+    const url = `https://movieapi.sendpo.cn/movieapi/${currentSource}.php?ac=detail&pg=${page}`;
     console.log('请求URL:', url);
 
     const response = await fetch(url, { cache: forceRefresh ? 'no-store' : 'default' });
@@ -137,7 +137,7 @@ async function handleSearch() {
   showLoading();
 
   try {
-    const searchUrl = `http://movieapi.sendpo.cn/movieapi/movie_search.php?keyword=${encodeURIComponent(searchKeyword)}`;
+    const searchUrl = `https://movieapi.sendpo.cn/movieapi/movie_search.php?keyword=${encodeURIComponent(searchKeyword)}`;
     console.log('搜索请求URL:', searchUrl);
 
     const response = await fetch(searchUrl);
